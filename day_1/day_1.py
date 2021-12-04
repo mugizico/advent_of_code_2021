@@ -9,7 +9,7 @@ from typing import Iterator, Iterable
 
 
 def _read_measurements() -> list:
-    with open("day_1_input.txt", "r") as f:
+    with open("day_1/day_1_input.txt", "r") as f:
         return [int(line) for line in f]
 
 
