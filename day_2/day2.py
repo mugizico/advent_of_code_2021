@@ -21,6 +21,27 @@ def calculate_position():
     return abs(horizontal_sum) * abs(depth_sum)
 
 
+def calculate_pos_with_aim():
+    input_list = _read_input()
+    aim = 0
+    horizontal = 0
+    depth = 0
+    for line in input_list:
+        position, num = line.split(" ")
+        num = int(num)
+        if position == "down":
+            aim += num
+        elif position == "up":
+            aim -= num
+        elif position == "forward":
+            horizontal += num
+            depth = depth + (aim * num)
+
+    return abs(horizontal) * abs(depth)
+
+
 if __name__ == "__main__":
     position = calculate_position()
     print(f"The position (horizontal * depth) is {position}")
+    position_with_aim = calculate_pos_with_aim()
+    print(f"The position (horizontal * depth) with aim is {position_with_aim}")
